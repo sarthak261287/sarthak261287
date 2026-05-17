@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OSM Checking Practice Mockup</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="top-banner">
+    <div>
+      <p class="eyebrow">Training prototype • Not an official CBSE service</p>
+      <h1>OSM Answer-Script Checking Mockup</h1>
+      <p class="subtitle">
+        A safe, static practice interface inspired by online script marking workflows for planning,
+        reviewing, annotating, and submitting sample evaluations.
+      </p>
+    </div>
+    <button class="help-button" type="button" aria-label="Open help tips">Help</button>
+  </header>
+
+  <main class="workspace" aria-label="OSM checking mock workspace">
+    <aside class="panel script-list" aria-labelledby="scripts-heading">
+      <div class="panel-heading">
+        <h2 id="scripts-heading">Scripts Queue</h2>
+        <span class="badge">Demo</span>
+      </div>
+      <label class="search-label" for="script-search">Find script</label>
+      <input id="script-search" type="search" placeholder="Search by roll no. or status" />
+      <ul class="queue" id="script-queue">
+        <li class="active" data-status="checking">
+          <strong>Roll 248315</strong>
+          <span>Q1–Q5 pending • 12 pages</span>
+        </li>
+        <li data-status="reviewed">
+          <strong>Roll 248426</strong>
+          <span>Reviewed • 10 pages</span>
+        </li>
+        <li data-status="flagged">
+          <strong>Roll 248599</strong>
+          <span>Needs moderation • 14 pages</span>
+        </li>
+        <li data-status="checking">
+          <strong>Roll 248712</strong>
+          <span>Q6–Q10 pending • 11 pages</span>
+        </li>
+      </ul>
+    </aside>
+
+    <section class="panel viewer" aria-labelledby="viewer-heading">
+      <div class="panel-heading viewer-toolbar">
+        <div>
+          <h2 id="viewer-heading">Scanned Answer Script</h2>
+          <p>Sample page 03 of 12 • Subject: Mathematics</p>
+        </div>
+        <div class="toolbar-actions" aria-label="Viewer controls">
+          <button type="button">−</button>
+          <span>100%</span>
+          <button type="button">+</button>
+        </div>
+      </div>
+
+      <article class="answer-sheet" aria-label="Sample answer sheet preview">
+        <div class="sheet-meta">
+          <span>Question 3(b)</span>
+          <span>Maximum Marks: 5</span>
+        </div>
+        <div class="handwritten-lines">
+          <span></span><span class="short"></span><span></span><span></span><span class="medium"></span>
+        </div>
+        <div class="annotation correct">✓ Method identified</div>
+        <div class="annotation note">Check final unit</div>
+        <div class="stamp">Sample only</div>
+      </article>
+    </section>
+
+    <aside class="panel marking" aria-labelledby="marking-heading">
+      <div class="panel-heading">
+        <h2 id="marking-heading">Marking Panel</h2>
+        <span class="timer" id="timer">18:00</span>
+      </div>
+
+      <form id="marks-form">
+        <fieldset>
+          <legend>Question-wise Marks</legend>
+          <label>Q1 <input type="number" min="0" max="5" value="4" /></label>
+          <label>Q2 <input type="number" min="0" max="5" value="3" /></label>
+          <label>Q3 <input type="number" min="0" max="5" value="4" /></label>
+          <label>Q4 <input type="number" min="0" max="5" value="0" /></label>
+          <label>Q5 <input type="number" min="0" max="5" value="0" /></label>
+        </fieldset>
+
+        <label class="comment-label" for="remarks">Evaluator remarks</label>
+        <textarea id="remarks" rows="4" placeholder="Add a short moderation note..."></textarea>
+
+        <div class="summary-card">
+          <span>Total awarded</span>
+          <strong id="total-marks">11 / 25</strong>
+        </div>
+
+        <div class="action-grid">
+          <button class="secondary" type="button">Flag</button>
+          <button class="secondary" type="button">Save Draft</button>
+          <button class="primary" type="submit">Submit Evaluation</button>
+        </div>
+      </form>
+    </aside>
+  </main>
+
+  <section class="planning-section" aria-labelledby="plan-heading">
+    <div>
+      <p class="eyebrow">Build plan</p>
+      <h2 id="plan-heading">Suggested pages and features</h2>
+    </div>
+    <div class="plan-grid">
+      <article>
+        <h3>1. Dashboard</h3>
+        <p>Show assigned bundles, status counts, deadlines, and moderation alerts.</p>
+      </article>
+      <article>
+        <h3>2. Script Viewer</h3>
+        <p>Display sample scanned pages with zoom, navigation, and annotation tools.</p>
+      </article>
+      <article>
+        <h3>3. Mark Entry</h3>
+        <p>Capture question-wise marks, remarks, flags, and automatic totals.</p>
+      </article>
+      <article>
+        <h3>4. Review Flow</h3>
+        <p>Provide draft saving, final submission confirmation, and moderation history.</p>
+      </article>
+    </div>
+  </section>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
