@@ -1,10 +1,41 @@
-- 👋 Hi, I’m @sarthak261287
-- 👀 I’m interested in ...
-- 🌱 I’m currently learning ...
-- 💞️ I’m looking to collaborate on ...
-- 📫 How to reach me ...
+# OSM Checking Practice Mockup
 
-<!---
-sarthak261287/sarthak261287 is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-You can click the Preview link to take a look at your changes.
---->
+This repository contains a static, front-end-only prototype for planning an online answer-script marking workflow inspired by OSM-style checking.
+
+> **Important:** This is a training/demo page only. It is not affiliated with CBSE, does not use official CBSE branding, and does not collect evaluator credentials or real student data.
+
+## What is included
+
+- A responsive dashboard-style web page for a sample scripts queue, scanned answer-sheet viewer, and marking panel.
+- Question-wise mark inputs with automatic total calculation.
+- Demo interactions for filtering scripts, selecting a script, and submitting a mock evaluation.
+- A visible build-plan section that breaks the product into dashboard, viewer, mark-entry, and review-flow features.
+
+## Run locally
+
+Open `index.html` directly in a browser, or serve the folder with any static server:
+
+```bash
+python3 -m http.server 8000
+```
+
+Then visit `http://localhost:8000`.
+
+## Backend and database scaffold
+
+A lightweight Python/SQLite API scaffold is included for planning the system pipeline:
+
+```bash
+python3 backend/app.py
+```
+
+Useful demo endpoints:
+
+- `GET http://127.0.0.1:8080/health`
+- `GET http://127.0.0.1:8080/api/scripts`
+- `GET http://127.0.0.1:8080/api/scripts/1`
+- `PATCH http://127.0.0.1:8080/api/scripts/1/marks`
+- `POST http://127.0.0.1:8080/api/scripts/1/submit`
+
+See [`docs/backend-pipeline.md`](docs/backend-pipeline.md) for the recommended modules, database tables, API workflow, and production-readiness pipeline.
+
